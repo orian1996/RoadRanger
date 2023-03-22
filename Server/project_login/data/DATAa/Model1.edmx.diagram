@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f135f31ca404d40a7c974394a42b091" Name="Diagram1">
+        <EntityTypeShape EntityType="igroup190_prodModel.sysdiagram" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblArea" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblAskForHelp" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblComment" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblConversation" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblCountry" Width="1.5" PointX="1.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblEvent" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblLocation" Width="1.5" PointX="5.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblStakeholder" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblTravelere" Width="1.5" PointX="3" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblType" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup190_prodModel.tblUser" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="igroup190_prodModel.fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk4" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk7" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk10" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk9" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.FK__tblConver__User___7B264821" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.FK__tblConver__User___7C1A6C5A" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk5_new" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk6" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk8" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk14" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk11_new" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.fk11" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup190_prodModel.tblinsuredBy" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
