@@ -1,0 +1,12 @@
+C:\Users\97250\Desktop\react\data\DATAa\bin\Debug\DATAa.dll.config
+C:\Users\97250\Desktop\react\data\DATAa\bin\Debug\DATAa.dll
+C:\Users\97250\Desktop\react\data\DATAa\bin\Debug\DATAa.pdb
+C:\Users\97250\Desktop\react\data\DATAa\bin\Debug\EntityFramework.dll
+C:\Users\97250\Desktop\react\data\DATAa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\97250\Desktop\react\data\DATAa\bin\Debug\EntityFramework.xml
+C:\Users\97250\Desktop\react\data\DATAa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\97250\Desktop\react\data\DATAa\obj\Debug\DATAa.csproj.AssemblyReference.cache
+C:\Users\97250\Desktop\react\data\DATAa\obj\Debug\DATAa.csproj.CoreCompileInputs.cache
+C:\Users\97250\Desktop\react\data\DATAa\obj\Debug\DATAa.csproj.CopyComplete
+C:\Users\97250\Desktop\react\data\DATAa\obj\Debug\DATAa.dll
+C:\Users\97250\Desktop\react\data\DATAa\obj\Debug\DATAa.pdb
