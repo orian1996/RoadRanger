@@ -45,7 +45,7 @@ export default function SignUp() {
       </TextInput>
       <Text style={styles.text}>Password:</Text>
       <TextInput style={styles.input}
-        placeholder="******"
+        placeholder="*******"
         value={password}
         onChangeText={(text) => setPassword(text)}
         secureTextEntry={true} 
