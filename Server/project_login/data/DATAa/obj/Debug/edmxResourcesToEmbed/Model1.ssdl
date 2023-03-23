@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="igroup190_prodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblArea">
+    <Key>
+      <PropertyRef Name="country_number" />
+      <PropertyRef Name="area_number" />
+    </Key>
+    <Property Name="country_number" Type="int" Nullable="false" />
+    <Property Name="area_number" Type="int" Nullable="false" />
+    <Property Name="area_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAskForHelp">
+    <Key>
+      <PropertyRef Name="requastNumber" />
+    </Key>
+    <Property Name="requastNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="details" Type="varchar" MaxLength="200" />
+    <Property Name="latitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="longitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="picture" Type="varchar" MaxLength="500" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="serialTypeNumber" Type="int" Nullable="false" />
+    <Property Name="country_number" Type="int" Nullable="false" />
+    <Property Name="area_number" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblComments">
+    <Key>
+      <PropertyRef Name="commentNumber" />
+      <PropertyRef Name="eventNumber" />
+    </Key>
+    <Property Name="commentNumber" Type="int" Nullable="false" />
+    <Property Name="eventNumber" Type="int" Nullable="false" />
+    <Property Name="details" Type="varchar" MaxLength="500" />
+    <Property Name="comment_date" Type="date" Nullable="false" />
+    <Property Name="comment_time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblConversation">
+    <Key>
+      <PropertyRef Name="ChatId" />
+    </Key>
+    <Property Name="ChatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_one" Type="int" Nullable="false" />
+    <Property Name="User_two" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCountries">
+    <Key>
+      <PropertyRef Name="country_number" />
+    </Key>
+    <Property Name="country_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="country_name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEvents">
+    <Key>
+      <PropertyRef Name="eventNumber" />
+    </Key>
+    <Property Name="eventNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="details" Type="varchar" MaxLength="500" />
+    <Property Name="event_date" Type="date" Nullable="false" />
+    <Property Name="event_time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="latitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="longitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="event_status" Type="bit" />
+    <Property Name="picture" Type="varchar" MaxLength="500" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="serialTypeNumber" Type="int" Nullable="false" />
+    <Property Name="country_number" Type="int" Nullable="false" />
+    <Property Name="area_number" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblinsuredBy">
+    <Key>
+      <PropertyRef Name="travelerId" />
+      <PropertyRef Name="stakeholdersId" />
+    </Key>
+    <Property Name="travelerId" Type="int" Nullable="false" />
+    <Property Name="stakeholdersId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLocations">
+    <Key>
+      <PropertyRef Name="locationNumber" />
+      <PropertyRef Name="travelerId" />
+    </Key>
+    <Property Name="locationNumber" Type="int" Nullable="false" />
+    <Property Name="travelerId" Type="int" Nullable="false" />
+    <Property Name="dateAndTime" Type="datetime" Nullable="false" />
+    <Property Name="latitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="longitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblStakeholders">
+    <Key>
+      <PropertyRef Name="stakeholdersId" />
+    </Key>
+    <Property Name="stakeholdersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="approved" Type="bit" />
+    <Property Name="approvelDate" Type="date" Nullable="false" />
+    <Property Name="stakeholderType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblTraveleres">
+    <Key>
+      <PropertyRef Name="travelerId" />
+    </Key>
+    <Property Name="travelerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="insurence_company" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="location" Type="bit" />
+    <Property Name="birthday" Type="date" Nullable="false" />
+    <Property Name="gender" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tblType">
+    <Key>
+      <PropertyRef Name="serialTypeNumber" />
+    </Key>
+    <Property Name="serialTypeNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="chat" Type="bit" />
+    <Property Name="notifications" Type="bit" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__tblConver__User___7B264821">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblConversation" Type="Self.tblConversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tblConversation">
+        <PropertyRef Name="User_one" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblConver__User___7C1A6C5A">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblConversation" Type="Self.tblConversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tblConversation">
+        <PropertyRef Name="User_two" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk1">
+    <End Role="tblCountries" Type="Self.tblCountries" Multiplicity="1" />
+    <End Role="tblArea" Type="Self.tblArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCountries">
+        <PropertyRef Name="country_number" />
+      </Principal>
+      <Dependent Role="tblArea">
+        <PropertyRef Name="country_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk10">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblComments" Type="Self.tblComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tblComments">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk11">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblTraveleres" Type="Self.tblTraveleres" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tblTraveleres">
+        <PropertyRef Name="travelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk11_new">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblStakeholders" Type="Self.tblStakeholders" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tblStakeholders">
+        <PropertyRef Name="stakeholdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk12">
+    <End Role="tblTraveleres" Type="Self.tblTraveleres" Multiplicity="1" />
+    <End Role="tblinsuredBy" Type="Self.tblinsuredBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTraveleres">
+        <PropertyRef Name="travelerId" />
+      </Principal>
+      <Dependent Role="tblinsuredBy">
+        <PropertyRef Name="travelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk13">
+    <End Role="tblStakeholders" Type="Self.tblStakeholders" Multiplicity="1" />
+    <End Role="tblinsuredBy" Type="Self.tblinsuredBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStakeholders">
+        <PropertyRef Name="stakeholdersId" />
+      </Principal>
+      <Dependent Role="tblinsuredBy">
+        <PropertyRef Name="stakeholdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk14">
+    <End Role="tblTraveleres" Type="Self.tblTraveleres" Multiplicity="1" />
+    <End Role="tblLocations" Type="Self.tblLocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTraveleres">
+        <PropertyRef Name="travelerId" />
+      </Principal>
+      <Dependent Role="tblLocations">
+        <PropertyRef Name="travelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk2">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblAskForHelp" Type="Self.tblAskForHelp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tblAskForHelp">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk3">
+    <End Role="tblType" Type="Self.tblType" Multiplicity="1" />
+    <End Role="tblAskForHelp" Type="Self.tblAskForHelp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblType">
+        <PropertyRef Name="serialTypeNumber" />
+      </Principal>
+      <Dependent Role="tblAskForHelp">
+        <PropertyRef Name="serialTypeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk4">
+    <End Role="tblArea" Type="Self.tblArea" Multiplicity="1" />
+    <End Role="tblAskForHelp" Type="Self.tblAskForHelp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblArea">
+        <PropertyRef Name="area_number" />
+        <PropertyRef Name="country_number" />
+      </Principal>
+      <Dependent Role="tblAskForHelp">
+        <PropertyRef Name="area_number" />
+        <PropertyRef Name="country_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk5_new">
+    <End Role="tblType" Type="Self.tblType" Multiplicity="1" />
+    <End Role="tblEvents" Type="Self.tblEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblType">
+        <PropertyRef Name="serialTypeNumber" />
+      </Principal>
+      <Dependent Role="tblEvents">
+        <PropertyRef Name="serialTypeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk6">
+    <End Role="tblEvents" Type="Self.tblEvents" Multiplicity="1" />
+    <End Role="tblEvents1" Type="Self.tblEvents" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblEvents">
+        <PropertyRef Name="eventNumber" />
+      </Principal>
+      <Dependent Role="tblEvents1">
+        <PropertyRef Name="eventNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk7">
+    <End Role="tblArea" Type="Self.tblArea" Multiplicity="1" />
+    <End Role="tblEvents" Type="Self.tblEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblArea">
+        <PropertyRef Name="area_number" />
+        <PropertyRef Name="country_number" />
+      </Principal>
+      <Dependent Role="tblEvents">
+        <PropertyRef Name="area_number" />
+        <PropertyRef Name="country_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk8">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblEvents" Type="Self.tblEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tblEvents">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk9">
+    <End Role="tblEvents" Type="Self.tblEvents" Multiplicity="1" />
+    <End Role="tblComments" Type="Self.tblComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEvents">
+        <PropertyRef Name="eventNumber" />
+      </Principal>
+      <Dependent Role="tblComments">
+        <PropertyRef Name="eventNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="igroup190_prodModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblArea" EntityType="Self.tblArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAskForHelp" EntityType="Self.tblAskForHelp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblComments" EntityType="Self.tblComments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblConversation" EntityType="Self.tblConversation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCountries" EntityType="Self.tblCountries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEvents" EntityType="Self.tblEvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblinsuredBy" EntityType="Self.tblinsuredBy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLocations" EntityType="Self.tblLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStakeholders" EntityType="Self.tblStakeholders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTraveleres" EntityType="Self.tblTraveleres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblType" EntityType="Self.tblType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblConver__User___7B264821" Association="Self.FK__tblConver__User___7B264821">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblConversation" EntitySet="tblConversation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblConver__User___7C1A6C5A" Association="Self.FK__tblConver__User___7C1A6C5A">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblConversation" EntitySet="tblConversation" />
+    </AssociationSet>
+    <AssociationSet Name="fk1" Association="Self.fk1">
+      <End Role="tblCountries" EntitySet="tblCountries" />
+      <End Role="tblArea" EntitySet="tblArea" />
+    </AssociationSet>
+    <AssociationSet Name="fk10" Association="Self.fk10">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblComments" EntitySet="tblComments" />
+    </AssociationSet>
+    <AssociationSet Name="fk11" Association="Self.fk11">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTraveleres" EntitySet="tblTraveleres" />
+    </AssociationSet>
+    <AssociationSet Name="fk11_new" Association="Self.fk11_new">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblStakeholders" EntitySet="tblStakeholders" />
+    </AssociationSet>
+    <AssociationSet Name="fk12" Association="Self.fk12">
+      <End Role="tblTraveleres" EntitySet="tblTraveleres" />
+      <End Role="tblinsuredBy" EntitySet="tblinsuredBy" />
+    </AssociationSet>
+    <AssociationSet Name="fk13" Association="Self.fk13">
+      <End Role="tblStakeholders" EntitySet="tblStakeholders" />
+      <End Role="tblinsuredBy" EntitySet="tblinsuredBy" />
+    </AssociationSet>
+    <AssociationSet Name="fk14" Association="Self.fk14">
+      <End Role="tblTraveleres" EntitySet="tblTraveleres" />
+      <End Role="tblLocations" EntitySet="tblLocations" />
+    </AssociationSet>
+    <AssociationSet Name="fk2" Association="Self.fk2">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAskForHelp" EntitySet="tblAskForHelp" />
+    </AssociationSet>
+    <AssociationSet Name="fk3" Association="Self.fk3">
+      <End Role="tblType" EntitySet="tblType" />
+      <End Role="tblAskForHelp" EntitySet="tblAskForHelp" />
+    </AssociationSet>
+    <AssociationSet Name="fk4" Association="Self.fk4">
+      <End Role="tblArea" EntitySet="tblArea" />
+      <End Role="tblAskForHelp" EntitySet="tblAskForHelp" />
+    </AssociationSet>
+    <AssociationSet Name="fk5_new" Association="Self.fk5_new">
+      <End Role="tblType" EntitySet="tblType" />
+      <End Role="tblEvents" EntitySet="tblEvents" />
+    </AssociationSet>
+    <AssociationSet Name="fk6" Association="Self.fk6">
+      <End Role="tblEvents" EntitySet="tblEvents" />
+      <End Role="tblEvents1" EntitySet="tblEvents" />
+    </AssociationSet>
+    <AssociationSet Name="fk7" Association="Self.fk7">
+      <End Role="tblArea" EntitySet="tblArea" />
+      <End Role="tblEvents" EntitySet="tblEvents" />
+    </AssociationSet>
+    <AssociationSet Name="fk8" Association="Self.fk8">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblEvents" EntitySet="tblEvents" />
+    </AssociationSet>
+    <AssociationSet Name="fk9" Association="Self.fk9">
+      <End Role="tblEvents" EntitySet="tblEvents" />
+      <End Role="tblComments" EntitySet="tblComments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
