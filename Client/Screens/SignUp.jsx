@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Ionicons";
 import RoadRanger from '../assets/RoadRanger.png';
@@ -20,46 +20,41 @@ export default function SignUp() {
    
   // };
 
-  
-
   return (
+    <ScrollView>
     < GradientBackground>
-
     <View style={styles.container}>
       <Image source={RoadRanger} style={styles.RoadRanger} />
       <Text style={styles.text}>First Name:</Text>
       <TextInput style={styles.input}
       value={firstName}
       onChangeText={(text) => setFirstName(text)}
-        placeholder="Full Name">
-      </TextInput>
+        placeholder="First Name">
+      </TextInput> 
       <Text style={styles.text}>Last Name:</Text>
       <TextInput style={styles.input}
       value={lastName}
       onChangeText={(text) => setLastName(text)}
-        placeholder="Full Name">
+        placeholder="Last Name">
       </TextInput>
-      <Text style={styles.text}>Email:</Text>
+       <Text style={styles.text}>Email:</Text>
       <TextInput style={styles.input}
        value={email}
        onChangeText={(text) => setEmail(text)}
         placeholder="User Email">
       </TextInput>
       <Text style={styles.text}>Password:</Text>
-
       <TextInput style={styles.input}
-        placeholder="*********"
+        placeholder="***"
         value={password}
         onChangeText={(text) => setPassword(text)}
         secureTextEntry={true} 
-        right={ 
-        <Icon name="eye-outline" size={30}  />}
         >
       </TextInput>
 
-      <TouchableOpacity style={styles.btnSignUp}
-      //  onPress={handleSignUp}
-       >
+      <TouchableOpacity style={styles.btnSignUp}>
+      {/* onPress={handleSignUp} */}
+       
         <Text style={styles.btnText}>
           Sign Up
         </Text>
@@ -75,7 +70,7 @@ export default function SignUp() {
     </View>
 
     </GradientBackground>
-
+    </ScrollView>
   )
 }
 const styles = StyleSheet.create({
