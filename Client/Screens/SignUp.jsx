@@ -15,61 +15,95 @@ export default function SignUp() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [phone, setPhone] = useState('');
   // const handleSignUp =  () => {
-   
+
   // };
+  const handleSignUp = async () => {
+    try {
+      const response = await fetch('http://cgroup90@194.90.158.74/cgroup90/prod/api/post/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          phone: phone,
+          password: password,
+          firstName: firstName,
+          lastName: lastName
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Something went wrong!');
+      }
+
+      // Handle successful sign-up here
+      // For example, you can navigate to a success screen:
+      navigation.navigate('SignUpSuccess');
+    } catch (error) {
+      console.error(error);
+      // Handle errors here, such as displaying an error message to the user
+    }
+  };
 
   return (
     <ScrollView>
-    < GradientBackground>
-    <View style={styles.container}>
-      <Image source={RoadRanger} style={styles.RoadRanger} />
-      <Text style={styles.text}>First Name:</Text>
-      <TextInput style={styles.input}
-      value={firstName}
-      onChangeText={(text) => setFirstName(text)}
-        placeholder="First Name">
-      </TextInput> 
-      <Text style={styles.text}>Last Name:</Text>
-      <TextInput style={styles.input}
-      value={lastName}
-      onChangeText={(text) => setLastName(text)}
-        placeholder="Last Name">
-      </TextInput>
-       <Text style={styles.text}>Email:</Text>
-      <TextInput style={styles.input}
-       value={email}
-       onChangeText={(text) => setEmail(text)}
-        placeholder="User Email">
-      </TextInput>
-      <Text style={styles.text}>Password:</Text>
-      <TextInput style={styles.input}
-        placeholder="*****"
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-        secureTextEntry={true} 
-        >
-      </TextInput>
+      < GradientBackground>
+        <View style={styles.container}>
+          <Image source={RoadRanger} style={styles.RoadRanger} />
+          <Text style={styles.text}>First Name:</Text>
+          <TextInput style={styles.input}
+            value={firstName}
+            onChangeText={(text) => setFirstName(text)}
+            placeholder="First Name">
+          </TextInput>
+          <Text style={styles.text}>Last Name:</Text>
+          <TextInput style={styles.input}
+            value={lastName}
+            onChangeText={(text) => setLastName(text)}
+            placeholder="Last Name">
+          </TextInput>
+          <Text style={styles.text}>Email:</Text>
+          <TextInput style={styles.input}
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            placeholder="User Email">
+          </TextInput>
+          <Text style={styles.text}>Password:</Text>
+          <TextInput style={styles.input}
+            placeholder="*****"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+            secureTextEntry={true}
+          >
+          </TextInput>
+          <Text style={styles.text}>phone:</Text>
+          <TextInput style={styles.input}
+            placeholder="phone"
+            value={phone}
+            onChangeText={(text) => setPhone(text)}
+            secureTextEntry={true}
+          >
+          </TextInput>
 
-      <TouchableOpacity style={styles.btnSignUp}>
-      {/* onPress={handleSignUp} */}
-       
-        <Text style={styles.btnText}>
-          Sign Up
-        </Text>
-      </TouchableOpacity>
+          <TouchableOpacity style={styles.btnSignUp} onPress={handleSignUp}>
+            <Text style={styles.btnText}>
+              Sign Up
+            </Text>
+          </TouchableOpacity>
 
 
-      <TouchableOpacity style={{ flexDirection: 'row' }}>
-        <Icon name="mail-open-outline" size={30} />
-        <Text style={styles.contact}>
-          Contact us
-        </Text>
-      </TouchableOpacity>
-    </View>
+          <TouchableOpacity style={{ flexDirection: 'row' }}>
+            <Icon name="mail-open-outline" size={30} />
+            <Text style={styles.contact}>
+              Contact us
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-    </GradientBackground>
+      </GradientBackground>
     </ScrollView>
   )
 }
