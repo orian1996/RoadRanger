@@ -51,11 +51,17 @@ export default function SignUp() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email: email,
+          first_name: firstName,
+          last_name: lastName,
+          travler_email: email,
           phone: phone,
+          notification: isEnabledNotification,
+          insurence_company: insurance,
+          location: isEnabledLocation,
+          save_location: isEnabledLocation,
+          dateOfBirth: isCalendarOpen,
+          gender: gender,
           password: password,
-          firstName: firstName,
-          lastName: lastName
         })
       });
 
@@ -100,16 +106,14 @@ export default function SignUp() {
             placeholder="****"
             value={password}
             onChangeText={(text) => setPassword(text)}
-            secureTextEntry={true}
-          >
+            secureTextEntry={true}>
           </TextInput>
           <Text style={styles.text}>Phone:</Text>
           <TextInput style={styles.input}
             placeholder="Phone"
             value={phone}
             onChangeText={(text) => setPhone(text)}
-            secureTextEntry={true}
-          >
+            secureTextEntry={true}>
           </TextInput>
           <Text style={styles.text}>Gender:</Text>
 
@@ -144,11 +148,11 @@ export default function SignUp() {
             }}
 
           />
- <Text style={styles.text}>Date of Birth:</Text>
+          <Text style={styles.text}>Date of Birth:</Text>
           <View>
             <TouchableOpacity onPress={() => setIsCalendarOpen(!isCalendarOpen)} style={styles.calendar}>
               <Text style={styles.text1}>{selectedDate ? selectedDate.toString() : "Select you'r Date of Birth"}</Text>
-              <Icon style={styles.icon} name="calendar-outline"/>
+              <Icon style={styles.icon} name="calendar-outline" />
             </TouchableOpacity>
             {isCalendarOpen && (
               <View>
@@ -189,7 +193,7 @@ export default function SignUp() {
               value={isEnabledChatMode}
             />
           </View>
-          <TouchableOpacity style={styles.btnSave}  onPress={handleSignUp}>
+          <TouchableOpacity style={styles.btnSave} onPress={handleSignUp}>
             <Text style={styles.btnText}>
               Save
             </Text>
@@ -220,9 +224,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
 
   },
-icon:{
-fontSize:25
-},
+  icon: {
+    fontSize: 25
+  },
   btnSignUp: {
     marginVertical: 20,
     width: "50%",
@@ -250,7 +254,7 @@ fontSize:25
     borderColor: '#144800',
     borderWidth: 1,
     borderRadius: 25,
-   width:'90%',
+    width: '90%',
     height: 50,
     justifyContent: 'space-between'
 
@@ -271,15 +275,15 @@ fontSize:25
     width: "90%",
 
   },
-  text1:{
+  text1: {
     fontSize: 18,
-        alignSelf: 'center',
-        color:"#A9A9A9"
+    alignSelf: 'center',
+    color: "#A9A9A9"
   },
-  text2:{
+  text2: {
     fontSize: 18,
-        alignSelf: 'center',
-       
+    alignSelf: 'center',
+
   },
   input: {
     flexDirection: 'row',
@@ -306,21 +310,21 @@ fontSize:25
   },
   placeholderStyle: {
     fontSize: 18,
-    color:"#A9A9A9"
+    color: "#A9A9A9"
   },
   selectedTextStyle: {
     fontSize: 18,
   },
-  row:{ flexDirection: 'row', alignItems: 'center' ,justifyContent: 'space-between',padding:10},
+  row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 10 },
   btnSave: {
-      marginVertical: 20,
-      width: "50%",
-      alignSelf: 'center',
-      paddingVertical: 10,
-      paddingHorizontal: 15,
-      borderColor: '#144800',
-      borderWidth: 2,
-      borderRadius: 25,
-      backgroundColor: '#144800'
-    },
+    marginVertical: 20,
+    width: "50%",
+    alignSelf: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderColor: '#144800',
+    borderWidth: 2,
+    borderRadius: 25,
+    backgroundColor: '#144800'
+  },
 });
