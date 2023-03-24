@@ -24,10 +24,10 @@ export default function SignIn() {
                 <Text style={styles.text}>Password:</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="*********"
+                    placeholder="***"
                     secureTextEntry={!this.state.showPassword}
                 >
-                    <Icon
+                    {/* <Icon
                         name={this.state.showPassword ? 'eye-outline' : 'eye-outline'}
                         size={30}
                         onPress={() =>
@@ -35,13 +35,14 @@ export default function SignIn() {
                                 showPassword: !prevState.showPassword
                             }))
                         }
-                    />
+                    /> */}
                 </TextInput>
 
 
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate("Forgot password")}}>
                     <Text >
-                        Forgot your password?
+                        Forgot you'r password?
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btnLogIn}>
@@ -53,12 +54,13 @@ export default function SignIn() {
                 <TouchableOpacity style={styles.btnSignUp} onPress={() => {
                     navigation.navigate("Sign Up");
                 }}>
-                    <Text style={styles.btnText}>
-                        Sign Up 
-                    </Text>
+                    <Text > Don't have an Account?  </Text>
+                    <Text style={styles.text1}> Click Here </Text>
 
                 </TouchableOpacity>
-                <TouchableOpacity style={{ flexDirection: 'row' }}>
+                <TouchableOpacity style={{ flexDirection: 'row', marginTop:150}} onPress={() => {
+                    navigation.navigate("Contact Us");
+                }}>
                     <Icon name="mail-open-outline" size={30} />
                     <Text style={styles.contact}>
                         Contact us
@@ -120,19 +122,18 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     btnSignUp: {
-        marginVertical: 20,
-        width: "50%",
-        alignSelf: 'center',
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderColor: '#B0C4DE',
-        borderWidth: 2,
-        borderRadius: 25,
-        backgroundColor: '#B0C4DE'
+        flexDirection: 'row',
+        marginBottom:20,
+        marginTop:20
     },
     contact: {
         fontSize: 20,
         alignSelf: 'center',
-        marginLeft: 10
+        marginLeft: 10,
+    },
+    text1: {
+        fontWeight: 'bold',
+        fontSize: 15,
+
     }
 });
