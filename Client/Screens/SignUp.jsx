@@ -17,9 +17,9 @@ export default function SignUp() {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
   const gender = [
-    { label: 'Male', value: 'Male' },
-    { label: 'Female', value: 'Female' },
-    { label: 'Other', value: 'Other' },]
+    { label: 'Male', value: 'M' },
+    { label: 'Female', value: 'F' },
+    { label: 'Other', value: 'O' },]
 
   const insurance = [
     { label: 'PassportCard', value: 'PassportCard' },
